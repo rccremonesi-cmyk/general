@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Piano dieta – prossimi 30 giorni</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#f6f5f1;--card:#fff;--tx:#1d2420;--mut:#5d675f;--ac:#2f7d4f;--acbg:#e3f1e8;--bd:#dcdad2;--warn:#b4571f}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141815;--card:#1d231f;--tx:#e9eee9;--mut:#9aa69c;--ac:#6ac28b;--acbg:#243a2c;--bd:#2f3832;--warn:#e59a63}}
+:root[data-theme="dark"]{--bg:#141815;--card:#1d231f;--tx:#e9eee9;--mut:#9aa69c;--ac:#6ac28b;--acbg:#243a2c;--bd:#2f3832;--warn:#e59a63}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*:before,*:after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:760px;margin:0 auto;padding:20px 16px 48px}
+h1{font-size:1.6rem;margin:.2em 0 .1em}
+h2{font-size:1.15rem;margin:0 0 10px}
+.sub{color:var(--mut);margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:16px;margin:0 0 16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.k{background:var(--acbg);border-radius:10px;padding:10px 12px}
+.k b{display:block;font-size:1.35rem;color:var(--ac)}
+.k span{font-size:.85rem;color:var(--mut)}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.93rem}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--bd);white-space:nowrap}
+th{color:var(--mut);font-weight:600}
+label{display:block;font-size:.9rem;color:var(--mut);margin:10px 0 4px}
+input,select{width:100%;padding:10px;font-size:1rem;border:1px solid var(--bd);border-radius:8px;background:var(--bg);color:var(--tx)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.out{margin-top:14px;background:var(--acbg);border-radius:10px;padding:12px 14px}
+.out .big{font-size:1.8rem;font-weight:700;color:var(--ac)}
+ul{margin:6px 0 0;padding-left:20px}
+li{margin:4px 0}
+.note{font-size:.88rem;color:var(--mut)}
+.warn{color:var(--warn)}
+</style>
+</head>
+<body>
+<main>
+<h1>Piano dieta – prossimi 30 giorni</h1>
+<p class="sub">Uomo, 42 anni, 173 cm, 86 kg. Obiettivo: ricomposizione (meno grasso in vita, muscoli più pieni).</p>
+
+<section class="card">
+<h2>I numeri di partenza</h2>
+<div class="grid">
+<div class="k"><b>~1.740</b><span>kcal metabolismo basale</span></div>
+<div class="k"><b>~2.400</b><span>kcal fabbisogno (come ti muovi ora)</span></div>
+<div class="k"><b>~2.100</b><span>kcal media obiettivo (-300)</span></div>
+<div class="k"><b>150 g</b><span>proteine al giorno</span></div>
+</div>
+<p class="note">Con 2.000 kcal eri a -400 senza abbastanza carboidrati e movimento: da qui la sensazione di muscoli vuoti. Ora il deficit è più piccolo e meglio distribuito.</p>
+</section>
+
+<section class="card">
+<h2>Target giornalieri base</h2>
+<p class="note">Valgono con meno di 3.000 passi (il tuo ritmo attuale). I passi in più si aggiungono con il calcolatore qui sotto.</p>
+<div class="scroll"><table>
+<tr><th>Giorno</th><th>Kcal</th><th>Proteine</th><th>Grassi</th><th>Carboidrati</th></tr>
+<tr><td>Riposo</td><td>2.050</td><td>150 g</td><td>75 g</td><td>~194 g</td></tr>
+<tr><td>Allenamento</td><td>2.150</td><td>150 g</td><td>75 g</td><td>~219 g</td></tr>
+</table></div>
+<ul>
+<li>Proteine su 3-4 pasti (35-40 g ciascuno).</li>
+<li>Nei giorni di allenamento metti la maggior parte dei carboidrati nel pasto prima e in quello dopo.</li>
+<li>Ogni kcal extra dai passi va quasi tutta in carboidrati (4 kcal = 1 g).</li>
+</ul>
+</section>
+
+<section class="card">
+<h2>Calcolatore: quante kcal in più mangiare</h2>
+<div class="row">
+<div><label for="day">Tipo di giorno</label>
+<select id="day"><option value="2050">Riposo</option><option value="2150">Allenamento</option></select></div>
+<div><label for="eat">Quota di consumo da recuperare</label>
+<select id="eat"><option value="0.7" selected>70% (consigliato)</option><option value="0.5">50% (più prudente)</option><option value="1">100% (solo mantenimento)</option></select></div>
+</div>
+<div class="row">
+<div><label for="steps">Passi di oggi</label><input id="steps" type="number" inputmode="numeric" min="0" step="500" value="8000"></div>
+<div><label for="km">oppure km a piedi</label><input id="km" type="number" inputmode="decimal" min="0" step="0.5" value="6.2"></div>
+</div>
+<div class="out">
+<div>Consumo extra stimato: <b id="burn">–</b> kcal</div>
+<div>Kcal extra da mangiare: <b id="extra">–</b></div>
+<div class="big"><span id="total">–</span> kcal totali</div>
+<div>Di cui carboidrati: <b id="carb">–</b> g (proteine 150 g, grassi 75 g)</div>
+</div>
+<p class="note">Formula: 1 km ≈ 1.300 passi ≈ 43 kcal nette (0,5 kcal/kg/km a 86 kg), cioè circa 0,033 kcal a passo. Si contano solo i passi oltre i 3.000, perché la base già li include.</p>
+
+<div class="scroll" style="margin-top:12px"><table>
+<tr><th>Passi</th><th>Km circa</th><th>Consumo extra</th><th>Mangia in più (70%)</th></tr>
+<tr><td>5.000</td><td>3,8</td><td>66 kcal</td><td>+45</td></tr>
+<tr><td>7.500</td><td>5,8</td><td>149 kcal</td><td>+105</td></tr>
+<tr><td>10.000</td><td>7,7</td><td>231 kcal</td><td>+160</td></tr>
+<tr><td>12.500</td><td>9,6</td><td>314 kcal</td><td>+220</td></tr>
+<tr><td>15.000</td><td>11,5</td><td>396 kcal</td><td>+275</td></tr>
+</table></div>
+</section>
+
+<section class="card">
+<h2>Piano settimana per settimana</h2>
+<div class="scroll"><table>
+<tr><th>Settimana</th><th>Passi medi</th><th>Focus</th></tr>
+<tr><td>1</td><td>4.000-5.000</td><td>Imposta la routine: tracciare tutto, pesarsi, camminata di 30 min dopo un pasto.</td></tr>
+<tr><td>2</td><td>5.500-6.500</td><td>Aggiungi una camminata nel weekend; porta i carboidrati attorno all'allenamento.</td></tr>
+<tr><td>3</td><td>6.500-7.500</td><td>Prima verifica del trend; progressione di carico in allenamento.</td></tr>
+<tr><td>4</td><td>7.500-8.000</td><td>Misura vita e peso, poi decidi gli aggiustamenti per il mese dopo.</td></tr>
+</table></div>
+</section>
+
+<section class="card">
+<h2>Allenamento (3 sedute da ~40 min)</h2>
+<ul>
+<li>Squat, stacco, panca, manubri: 2-3 serie dure per esercizio, fermandoti a 1-2 ripetizioni dal cedimento.</li>
+<li>Progressione: quando fai il massimo delle ripetizioni previste in tutte le serie, aumenta un po' il carico.</li>
+<li>Sonno 7-8 ore: è parte del recupero muscolare.</li>
+</ul>
+</section>
+
+<section class="card">
+<h2>Controlli e aggiustamenti</h2>
+<ul>
+<li><b>Peso:</b> ogni mattina a digiuno, poi guarda la media settimanale, non il singolo giorno.</li>
+<li><b>Vita:</b> ogni 2 settimane, sempre 1 cm sopra l'ombelico, a fine espirazione.</li>
+<li><b>Ritmo giusto:</b> -0,25/-0,5 kg a settimana.</li>
+<li>Se per 2 settimane perdi meno di 0,2 kg a settimana: togli 100 kcal (dai carboidrati).</li>
+<li class="warn">Se perdi più di 0,7 kg a settimana o ti senti di nuovo scarico in palestra: aggiungi 150 kcal.</li>
+<li>Se la forza in palestra cala per più di 2 settimane, sei troppo in deficit: sali di 150 kcal.</li>
+</ul>
+<p class="note">Sono stime con formule standard: la realtà individuale può variare di ±10%. Decidi sempre in base al trend di 2-3 settimane, non al singolo giorno. Per condizioni di salute particolari chiedi al medico.</p>
+</section>
+</main>
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+var KM=1300,BASE=3000,KCAL=0.033,lock=false;
+function calc(){
+var s=Math.max(0,parseFloat($("steps").value)||0);
+var burn=Math.max(0,s-BASE)*KCAL;
+var extra=burn*parseFloat($("eat").value);
+var base=parseInt($("day").value,10);
+var tot=base+extra;
+$("burn").textContent=Math.round(burn);
+$("extra").textContent="+"+Math.round(extra)+" kcal";
+$("total").textContent=Math.round(tot);
+$("carb").textContent=Math.round((tot-150*4-75*9)/4);
+}
+$("steps").addEventListener("input",function(){
+$("km").value=(((parseFloat(this.value)||0)/KM)).toFixed(1);calc();});
+$("km").addEventListener("input",function(){
+$("steps").value=Math.round((parseFloat(this.value)||0)*KM);calc();});
+$("day").addEventListener("change",calc);
+$("eat").addEventListener("change",calc);
+calc();
+})();
+</script>
+</body>
+</html>
